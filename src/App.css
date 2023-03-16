@@ -1,0 +1,43 @@
+#root {
+  min-width: 500px;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+input{
+  margin: 5px;
+  align-self: center;
+  width: 50%;
+}
+select{
+  width: 50%;
+}
+label{
+  margin: 5px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.validate{
+  margin: 20px;
+  background-color: #242424;
+  border-radius: 5px;
+}
+table {
+  font-family: sans-serif;
+  border-collapse: collapse;
+}
+
+thead{
+  border-bottom: 2px solid white;
+}
+th{
+  padding: 10px;
+}
+td, .total {
+  text-align: end;
+}
+.last-line{
+  border-top: 2px solid white;
+  text-align: left;
+}
