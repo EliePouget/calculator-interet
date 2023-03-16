@@ -79,7 +79,6 @@ function Tableau({formData}) {
         </table>
     );
 
-
 }
 
 
