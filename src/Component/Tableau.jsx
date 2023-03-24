@@ -4,21 +4,25 @@ import Ligne from "./Ligne.jsx";
 function Tableau({formData}) {
 
     let nbRemb = 1;
+    let taux = formData.taux;
     if (formData.periodicite === "mois-periodicite"){
         nbRemb = 12;
+        taux = taux / 12;
     }else if(formData.periodicite === "trimestre-periodicite"){
         nbRemb = 4;
+        taux = taux / 4;
     }else if(formData.periodicite === "semestre-periodicite"){
         nbRemb = 2;
+        taux = taux / 2;
     }
 
     const periodicite = formData.annee * nbRemb;
     let nbAnnee = 0;
-    const annuite = formData.montant * ( (formData.taux/100) / (1- Math.pow(1+formData.taux/100, -periodicite)))
+    const annuite = formData.montant * ( (taux/100) / (1- Math.pow(1+taux/100, -periodicite)))
 
 
     let capitalDebut = parseFloat(formData.montant);
-    let interet = formData.montant * (formData.taux/100);
+    let interet = formData.montant * (taux/100);
     let amortissement =  annuite - interet;
     let capitalFin = capitalDebut - amortissement;
 
@@ -40,7 +44,7 @@ function Tableau({formData}) {
                         capitalFin={capitalFin}/>);
 
         capitalDebut = capitalFin;
-        interet = capitalDebut * (formData.taux/100);
+        interet = capitalDebut * (taux/100);
         amortissement = annuite - interet;
         capitalFin = capitalDebut - amortissement;
         totalInteret += interet;

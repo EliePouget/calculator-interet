@@ -41,3 +41,6 @@ td, .total {
   border-top: 2px solid white;
   text-align: left;
 }
+.validate{
+  background-color: #b0b0b0;
+}
